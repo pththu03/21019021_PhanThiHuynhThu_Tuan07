@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.time {
+    font-size: 30px;
+    text-align: center;
+}
+
+.box_button {
+    line-height: 40px;
+    text-align: center;
+}
+
+.box_button button {
+    padding: 10px 20px;
+}
