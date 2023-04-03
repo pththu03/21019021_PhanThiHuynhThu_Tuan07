@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="./jquery/main.js"></script>
+    <script src="./jquery/jquery.min.js"></script>
     <title>Huynh Thu</title>
 </head>
 
@@ -14,7 +14,7 @@
     <div>
         <h1 class="title">STOP WATCH</h1>
         <p class="time">
-            <span id="hour">00</span>
+            <span id="minute">00</span>
             <span>:</span>
             <span id="seconds">00</span>
             <span>:</span>
@@ -27,6 +27,70 @@
         </div>
 
         <script>
+            var m = 00;
+            var sc = 00;
+            var ms = 00;
+
+            var append_m = $('#minute');
+            var append_sc = $('#seconds');
+            var append_ms = $('#milisecond');
+            var interval;
+
+            $(document).ready(function() {
+                $('#start--button').click(function() {
+                    clearInterval(interval);
+                    interval = setInterval(timeStart, 10)
+                });
+
+                $('#stop--button').click(function() {
+                    clearInterval(interval);
+                });
+
+                $('#reset--button').click(function() {
+                    clearInterval(interval);
+                    m = '00';
+                    sc = '00';
+                    ms = '00';
+                    append_m.html(m);
+                    append_sc.html(sc);
+                    append_ms.html(ms);
+                });
+            });
+
+            function timeStart() {
+                ms++;
+                if (ms < 10) {
+                    append_ms.html("0" + ms);
+                }
+
+                if (ms >= 10) {
+                    append_ms.html(ms);
+                }
+
+                if (ms > 99) {
+                    sc++;
+                    append_sc.html("0" + sc);
+                    ms = 0;
+                    append_ms.html("0" + ms);
+                }
+
+                if (sc > 9) {
+                    append_sc.html(sc)
+                }
+
+                if (sc > 59) {
+                    m++;
+                    append_m.html("0" + m);
+                    sc = 00;
+                    ms = 00;
+                    append_ms.html("0" + ms);
+                    append_sc.html("0" + sc);
+                }
+
+                if (m > 9) {
+                    append_m.html(m);
+                }
+            }
         </script>
     </div>
 </body>
