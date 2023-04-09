@@ -1,0 +1,77 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.title {
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.calc {
+    width: 400px;
+    height: 600px;
+    margin-top: 50px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgb(227, 215, 238);
+    box-shadow: 10px 10px gray;
+}
+
+.result {
+    width: 400;
+    height: 90px;
+}
+
+.result .input_btn {
+    width: 90%;
+    height: 70%;
+    outline: none;
+    font-size: 27px;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.result .input_btn:disabled {
+    background-color: beige;
+}
+
+.calc div {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calc .btn_operator {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    font-size: 25px;
+    background-color: bisque;
+}
+
+.calc div:nth-child(3) button{
+    background-color: rgb(202, 238, 208);
+}
+
+.calc > div button:last-child {
+    background-color: rgb(202, 238, 208);
+}
+
+.calc > div:last-child button:last-child {
+    background-color: rgb(243, 176, 151);
+}
